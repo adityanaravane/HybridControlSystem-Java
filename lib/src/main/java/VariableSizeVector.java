@@ -16,25 +16,25 @@ public class VariableSizeVector {
             this.vector.add(0);
             this.indexes.add(indexNames[i]);
         }
-        
-
     }
 
     public ArrayList<Double> get(){
         return this.vector;
     }
 
-    public void setValues(int index, double[] value) {
-        if (this.vector.size() < index) {
+    public void setValues(int[] index, double[] value) {
+        if (this.vector.size() < index.length) {
             throw new Exception("Trying to add a number out of scope");
         }
         if (this.vector.size() != value.length) {
             throw new Exception("Not Enough Values");
         }
 
-
+        for (i=0; i<=index.length; i++) {
+            this.vector.set(index[i], value[i]);
+        }
 
     }
 
-
+    
 }
